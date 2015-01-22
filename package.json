@@ -1,0 +1,26 @@
+{
+  "name": "keystoneplus",
+  "version": "0.0.1",
+  "description": "keystoneplus",
+  "main": "app.js",
+  "dependencies": {
+    "express": "~3.3.8",
+    "less-middleware": "~1.0.4",
+    "keystone": "~0.2.40",
+    "keystone-utils": "~0.1.12"
+  },
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DigitalInnovation/keystoneplus"
+  },
+  "keywords": [
+    "keystonejs",
+    "npm",
+    "ObjectArray"
+  ],
+  "author": "Peter Wang",
+  "license": "ISC"
+}

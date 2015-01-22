@@ -1,0 +1,48 @@
+
+.field(class='type-nosuchaclass', data-field-type=field.type, data-field-path='noinuse', data-field-collapse=field.collapse ? 'true' : false, data-field-depends-on=field.dependsOn, data-field-noedit=field.noedit ? 'true' : 'false')
+	label.field-label= field.label
+	.field-ui(class='width-' + field.width)
+
+		div(style='display: none;')
+			ul
+				hr
+				div.navbar-right
+					a.btn.btn-link.btn-cancel.btn-remove-item(href=js): span.ion-close-round
+			label= i
+			ul
+				each val, attributeName in field.options.subObjectDefine
+					if(typeof val != "function") 
+						//to jump the tostring function, this is a very stupid solution  if(attributeName != "type") 
+						div.input-group
+							span.input-group-addon= attributeName + ":" 
+							input(type='text', name=field.path + "." + attributeName, autocomplete='off').form-control
+
+		if field.noedit
+			// will support this later.
+			each value in item.get(field.path)
+				.field-value= value
+		else
+			- var i = 1
+			each aSubObj in item.get(field.path)
+				//If you got an error which cause by the above line, HAHAHA!!! go back to check your model class and make sure you also define your objectArray field into schema.  check my example!!!!!!!!!!!
+				div
+					ul
+						hr
+						div.navbar-right
+							a.btn.btn-link.btn-cancel.btn-remove-item(href=js): span.ion-close-round
+					label= i
+					ul
+						each val, attributeName in field.options.subObjectDefine
+							if(typeof val != "function") 
+								//to jump the tostring function, this is a very stupid solution  if(attributeName != "type") 
+								div.input-group
+									span.input-group-addon= attributeName + ":" 
+									input(type='text', name=field.path + "." + attributeName + "." + i, value=aSubObj[attributeName], autocomplete='off').form-control
+				- i++
+			div.navbar-right
+				a.btn.btn-xs.btn-default.btn-myadditem.btn-add-item(href=js)
+					| Add item
+		if field.note
+			.field-note!= field.note
+
+script(src="/keystoneplus/js/ObjectArray.js")
