@@ -11,6 +11,9 @@ var path = require('path'),
  */
 
 function static(app) {
+	if(app == undefined){
+		return;
+	}
 	
 	app.use('/keystoneplus', require('less-middleware')(__dirname + path.sep + 'public'));
 	app.use('/keystoneplus', express.static(__dirname + path.sep + 'public'));

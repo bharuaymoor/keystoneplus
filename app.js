@@ -1,4 +1,4 @@
-console.log("You are using keystoneplus! For more information please click harder to this link: https://github.com/DigitalInnovation/keystoneplus");
+console.log("You are using keystoneplus! For more information please access harder to this link: https://github.com/DigitalInnovation/keystoneplus");
 
 var keystone = require('keystone');
 var KeystonePlus = function() {

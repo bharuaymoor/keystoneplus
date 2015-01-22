@@ -1,6 +1,6 @@
 {
   "name": "keystoneplus",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "keystoneplus",
   "main": "app.js",
   "dependencies": {
